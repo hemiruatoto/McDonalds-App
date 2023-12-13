@@ -118,9 +118,7 @@ export function getItemPrice(item) {
       } else {
         return prev;
       }
-    });
-  } else {
-    return null;
+    }, null);
   }
 }
 
