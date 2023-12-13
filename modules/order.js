@@ -24,7 +24,14 @@ export default class Order {
        * @type {string[]}
        * @private
        */
-      this.rejectedItems = []; 
+      this.rejectedItems = [];
+      
+      /**
+       * Keep a list of items that were removed from the order.
+       * @type {string[]};
+       * @private
+       */
+       this.removedItems = [];
 
       /**
        * The date that the order was created.
@@ -63,7 +70,7 @@ export default class Order {
       };
 
       if (menuData.itemIsAvailable(item)) {
-         this.items.push(item);
+         this.items.push(item.toLowerCase().replaceAll(' ', '-'));
          console.log(`${item} was added to the order.`);
          return true;
       } else {
@@ -72,13 +79,45 @@ export default class Order {
          return false;
       }
    }
+  
+   /**
+    * Removes a single item from the order.
+    * @param {string} - The name of the item to remove.
+    */
+   removeOrderItem (item) {
+     if (typeof(item) != 'string') {
+       console.log(`Couldn't find ${item.toString()} in the order.`)
+       return false;
+     }
+    
+    const formattedItem = item.toLowerCase().replaceAll(' ', '-');
+    
+     if (this.items.includes(formattedItem)) {
+       const index = this.items.findIndex((item) => {
+         return item == formattedItem;
+       });
+       this.items.splice(index, 1);
+       this.removedItems.push(formattedItem);
+       console.log(`${item} removed from the order.`);
+     } else {
+       console.log(`Couldn't find ${item} in the order.`)
+     }
+   }
 
    /**
     * Get an array of any rejected items.
     * @returns {string[]}
     */
-   getRejectedItems () {
+  getRejectedItems () {
       return this.rejectedItems;
+   }
+   
+   /**
+    * Get an array of any removed items.
+    * @returns {String[]}
+    */
+   getRemovedItems () {
+     return this.removedItems;
    }
 
    /**

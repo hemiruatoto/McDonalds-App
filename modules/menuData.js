@@ -104,3 +104,7 @@ export function itemIsAvailable (item) {
 
     return getAvailableItemNames().includes(item.toLowerCase().replaceAll('-', ' '));
 }
+
+export function toItemString (item) {
+  
+}
