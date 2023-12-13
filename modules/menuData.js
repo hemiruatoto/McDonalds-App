@@ -113,12 +113,8 @@ export function itemIsAvailable(item) {
 export function getItemPrice(item) {
   if (itemIsAvailable(item)) {
     return allAvailableItems.reduce((prev, curr) => {
-      if (curr.name == item) {
-        return curr.price;
-      } else {
-        return prev;
-      }
-    }, null);
+        return curr.name == item ? curr.price : prev;
+      }, null);
   }
 }
 

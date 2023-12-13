@@ -1,0 +1,200 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&family=Poppins:wght@300;400;500;700&display=swap');
+
+/* Set variables */
+:root {
+    --primary: #DA291C;
+    --black: #27251F;
+    --white: white;
+    --off-white: rgb(223, 223, 223);
+    --grey: rgb(179, 179, 179);
+    --light-grey: rgb(204, 204, 204);
+    --active: dodgerblue;
+}
+
+/* Reset the basics*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Site styles */
+html, body, h1, h2, h3, p, ul, ol {
+  margin: 0;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.btn, button {
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  background: var(--light-grey);
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 100ms, box-shadow 200ms;
+}
+
+.btn:hover, button:hover {
+  background-color: var(--grey);
+  box-shadow: none;
+}
+
+.btn:active, button:active {
+  
+  outline: 0.2rem solid var(--active);
+}
+
+.btn.btn-outline {
+  border: 0.2rem solid var(--black);
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.header {
+  background: var(--primary);
+}
+
+.header > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header .brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .brand h1 {
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.header .brand img {
+  max-height: 2rem;
+  object-fit: contain;
+}
+
+.header .main-nav {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.header .main-nav .nav-item {
+  padding: 0.3rem 0.6rem;
+  border-width: 0.15rem;
+  border-color: var(--white);
+  font-size: 0.7rem;
+  color: var(--white);
+}
+
+.content {
+  background: var(--off-white);
+}
+
+.menu-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.2rem 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--white);
+  box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+}
+
+.menu-item-card .menu-item-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+}

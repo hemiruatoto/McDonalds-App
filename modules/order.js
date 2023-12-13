@@ -41,6 +41,13 @@ export default class Order {
      */
     this.createdDate = new Date();
 
+    /**
+     * Has this order been paid for?
+     * @type {boolean}
+     * @private
+     */
+    this.paidFor = false;
+
     // Try to add the given items to the order, do something if it rejects
     for (let item of itemNames) {
       if (this.addOrderItem(item) == false) {
@@ -149,14 +156,22 @@ export default class Order {
    * @param {number} tax - The amount of tax to charge.
    * @returns {number}
    */
-  getOrderTotalPrice(tax = 0.15) {
-    if (typeof(tax) != 'number') tax = 0.15;
+  getOrderTotalPrice(tax = 0) {
+    if (typeof(tax) != 'number') tax = 0;
 
     const total = this.items.reduce((prev, curr) => {
       return prev + this.getItemPrice(curr);
     }, 0);
-    
+
     const totalTax = total * tax;
     return (total + totalTax).toFixed(2);
+  }
+
+  /**
+   * Set whether the order has been paid for.
+   * @param {boolean} paidFor 
+   */
+  setPaidFor(paidFor) {
+    this.paidFor = paidFor;
   }
 }

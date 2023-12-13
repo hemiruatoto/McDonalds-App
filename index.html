@@ -4,11 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mc Donalds Order App</title>
+  <link rel="stylesheet" href="style.css">
   <script type="module" defer src="main.js"></script>
 </head>
 
 <body>
-
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <img src="images/logo.svg" alt="McDonalds logo" width="60">
+        <h1>McDonalds Order Maker™</h1>
+      </div>
+      <nav class="main-nav">
+        <button class="nav-item btn btn-outline">New Order</button>
+        <button class="nav-item btn btn-outline">View Orders</button>
+        <button class="nav-item btn btn-outline">Log Out</button>
+      </nav>
+    </div>
+  </header>
+  <main class="content">
+    <div class="container">
+      <section class="menu-grid">
+        <section class="menu-item-card">
+          <div class="menu-item-card-img">
+            <img src="images/menu-items/cheeseburger.png" alt="Cheeseburger" width="200">
+          </div>
+          <div class="menu-item-card-content">
+            <div class="menu-item-card-heading">
+              <h3>Cheeseburger</h3>
+            </div>
+            <div class="menu-item-card-price">
+              <span class="dollar-sign">$</span>
+              <span class="dollar-amount">4</span>
+              <span class="cents">.50</span>
+            </div>
+            <div class="menu-item-card-actions">
+              <button class="btn btn-outline">Add to order</button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
 </body>
 
 </html>
