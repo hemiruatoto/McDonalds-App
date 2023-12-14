@@ -10,24 +10,22 @@
 
 <body>
   <header class="header">
-    <div class="container">
-      <div class="brand">
-        <img src="images/logo.svg" alt="McDonalds logo" width="60">
-        <h1>McDonalds Order Maker™</h1>
-      </div>
-      <nav class="main-nav">
-        <button class="nav-item btn btn-outline">New Order</button>
-        <button class="nav-item btn btn-outline">View Orders</button>
-        <button class="nav-item btn btn-outline">Log Out</button>
-      </nav>
+    <div class="brand">
+      <img src="images/logo.svg" alt="McDonalds logo" width="60">
+      <h1>McDonalds Order Maker™</h1>
     </div>
+    <nav class="main-nav">
+      <button class="nav-item btn btn-outline">New Order</button>
+      <button class="nav-item btn btn-outline">View Orders</button>
+      <button class="nav-item btn btn-outline">Log Out</button>
+    </nav>
   </header>
   <main class="content">
     <div class="container">
-      <section class="menu-grid">
-        <section class="menu-item-card">
+      <section id="main-item-grid" class="menu-grid">
+        <!-- <section class="menu-item-card">
           <div class="menu-item-card-img">
-            <img src="images/menu-items/cheeseburger.png" alt="Cheeseburger" width="200">
+            <img src="images/menu-items/cheeseburger.png" alt="Cheeseburger">
           </div>
           <div class="menu-item-card-content">
             <div class="menu-item-card-heading">
@@ -39,10 +37,15 @@
               <span class="cents-amount">.50</span>
             </div>
             <div class="menu-item-card-actions">
-              <button class="btn btn-outline">Add to order</button>
+              <button class="btn">Add to order</button>
+              <div class="quantity-input">
+                <button class="btn quantity-input-remove">-</button>
+                <input type="text" value="0" size="1" class="quantity-input-value">
+                <button class="btn quantity-input-add">+</button>
+              </div>
             </div>
           </div>
-        </section>
+        </section> -->
       </section>
     </div>
   </main>

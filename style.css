@@ -6,7 +6,7 @@
     --primary: #DA291C;
     --black: #27251F;
     --white: white;
-    --off-white: rgb(223, 223, 223);
+    --off-white: rgb(230, 230, 230);
     --grey: rgb(179, 179, 179);
     --light-grey: rgb(204, 204, 204);
     --active: dodgerblue;
@@ -101,7 +101,13 @@ html {
 }
 
 .container {
-  padding: 1rem;
+  padding: 0.5rem;
+}
+
+input {
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .btn, button {
@@ -110,7 +116,6 @@ html {
   outline: none;
   border-radius: 0.5rem;
   background: var(--light-grey);
-  box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
   font-weight: 500;
   cursor: pointer;
   transition: background-color 100ms, box-shadow 200ms;
@@ -118,7 +123,6 @@ html {
 
 .btn:hover, button:hover {
   background-color: var(--grey);
-  box-shadow: none;
 }
 
 .btn:active, button:active {
@@ -133,19 +137,16 @@ html {
 }
 
 .header {
-  background: var(--primary);
-}
-
-.header > .container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  background: var(--primary);
 }
 
 .header .brand {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem 0.5rem;
 }
 
 .header .brand h1 {
@@ -162,6 +163,8 @@ html {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+  padding: 0.5rem;
+  background-color: #b62419;
 }
 
 .header .main-nav .nav-item {
@@ -185,10 +188,14 @@ html {
   display: flex;
   gap: 1rem;
   align-items: center;
-  padding: 1rem 1.2rem 1.5rem;
-  border-radius: 0.5rem;
+  padding: 0.5rem 1rem 1.2rem;
+  border-radius: 0.3rem;
   background: var(--white);
   box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+}
+
+.menu-item-card .menu-item-card-img {
+  max-width: 10rem;
 }
 
 .menu-item-card .menu-item-card-content {
@@ -200,6 +207,8 @@ html {
 
 .menu-item-card .menu-item-card-content .menu-item-card-price {
   display: flex;
+  margin-top: 0.2rem;
+  padding-left: 0.5rem;
   font-size: 2.5rem;
   font-weight: 500;
   line-height: 1;
@@ -209,12 +218,42 @@ html {
   display: block;
 }
 
-.menu-item-card .menu-item-card-content .menu-item-card-price .dollar-sign {
-  font-size: 1.6rem;
-  line-height: 1.5;
-}
-
+.menu-item-card .menu-item-card-content .menu-item-card-price .dollar-sign,
 .menu-item-card .menu-item-card-content .menu-item-card-price .cents-amount {
   font-size: 1.5rem;
   line-height: 1.5;
+}
+
+.menu-item-card .menu-item-card-content .menu-item-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.quantity-input {
+  display: flex;
+}
+
+.quantity-input .btn {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.quantity-input .quantity-input-value {
+  max-width: 3rem;
+  padding: 0.5rem;
+  border-color: var(--light-grey);
+  border-left: none;
+  border-right: none;
+  text-align: center;
+}
+
+.quantity-input .quantity-input-remove {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.quantity-input .quantity-input-add {
+  border-radius: 0 0.5rem 0.5rem 0;
 }

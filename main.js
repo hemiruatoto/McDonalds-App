@@ -1,17 +1,24 @@
 import Order from '/modules/order.js';
+import MenuItemCard from '/modules/menuItemCard.js';
 
 // Testing
-const order = new Order(['Big Mac', 'Large Combo', 'Cheeseburger', 'Chocolate Sunday']);
-order.addOrderItem('Nuggets 6 Pack');
-order.addOrderItem('McFlurry');
-order.removeOrderItem('cheeseburger');
-order.removeOrderItem('chicken');
-order.addOrderItem([1,2,3]);
-console.log('Big Mac costs: $' + order.getItemPrice('big-mac'));
-console.log('Large Combo costs: $' + order.getItemPrice('large-combo'));
-console.log('Nuggets 6 pack costs: $' + order.getItemPrice('nuggets-6-pack'));
-console.log('Total Order costs: $' + order.getOrderTotalPrice());
+const order = new Order();
 
-console.log('Order items: ' + order.getOrderItems().toString());
-console.log('Rejected items: ' + order.getRejectedItems().toString());
-console.log('Removed items: ' + order.getRemovedItems().toString());
+const itemGrid = document.getElementById('main-item-grid');
+const cheeseburgerCard = new MenuItemCard('Cheeseburger', 4.5, 'images/menu-items/cheeseburger.png');
+itemGrid.append(cheeseburgerCard.elements.main);
+
+cheeseburgerCard.elements.addToOrderButton.addEventListener('click', (event) => {
+    order.addOrderItem('Cheeseburger');
+    cheeseburgerCard.elements.quantityInput.value = order.getItemCount('Cheeseburger');
+});
+
+cheeseburgerCard.elements.quantityAdd.addEventListener('click', (event) => {
+    order.addOrderItem('Cheeseburger');
+    cheeseburgerCard.elements.quantityInput.value = order.getItemCount('Cheeseburger');
+});
+
+cheeseburgerCard.elements.quantityRemove.addEventListener('click', (event) => {
+    order.removeOrderItem('Cheeseburger');
+    cheeseburgerCard.elements.quantityInput.value = order.getItemCount('Cheeseburger');
+});

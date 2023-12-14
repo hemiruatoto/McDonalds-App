@@ -12,7 +12,7 @@ export default class Order {
    * Create an order.
    * @param {string[]} itemNames - The food items that the customer ordered.
    */
-  constructor(itemNames) {
+  constructor(itemNames = []) {
     /** 
      * Items that have been successfully added to the order.
      * @type {string[]}
@@ -148,6 +148,19 @@ export default class Order {
     } else {
       helpers.consoleAlert('warn', `${itemName} is not an available option.`);
       return null;
+    }
+  }
+
+  /**
+   * Returns the count of the given item in the order. Returns -1 if the item isn't available.
+   * @param {string} itemName - The name of the item.
+   * @returns {number}
+   */
+  getItemCount(itemName) {
+    if (menuData.itemIsAvailable(itemName)) {
+      return this.items.reduce((count, item) => item == menuData.toItemString(itemName) ? count + 1 : count, 0);
+    } else {
+      return -1;
     }
   }
 
