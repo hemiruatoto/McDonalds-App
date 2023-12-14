@@ -1,5 +1,5 @@
 import Order from '/modules/order.js';
-import MenuItemCard from '/modules/menuItemCard.js';
+import MenuItemCard from './modules/menuItemCard.js';
 
 // Testing
 const order = new Order();
