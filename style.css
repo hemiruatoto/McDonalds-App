@@ -183,7 +183,6 @@ html {
 
 .menu-item-card {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
   align-items: center;
   padding: 1rem 1.2rem 1.5rem;
@@ -197,4 +196,25 @@ html {
   flex-direction: column;
   align-items: start;
   width: 100%;
+}
+
+.menu-item-card .menu-item-card-content .menu-item-card-price {
+  display: flex;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.menu-item-card .menu-item-card-content .menu-item-card-price span {
+  display: block;
+}
+
+.menu-item-card .menu-item-card-content .menu-item-card-price .dollar-sign {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.menu-item-card .menu-item-card-content .menu-item-card-price .cents-amount {
+  font-size: 1.5rem;
+  line-height: 1.5;
 }
