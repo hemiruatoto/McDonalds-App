@@ -87,6 +87,7 @@ export default class MenuItemCard {
         quantityInput_el.setAttribute('type', 'text');
         quantityInput_el.setAttribute('value', this.quantity);
         quantityInput_el.setAttribute('size', '1');
+        quantityInput_el.setAttribute('readonly', 'true');
         quantityInput_el.classList.add('quantity-input-value');
 
         // Put them all together.
