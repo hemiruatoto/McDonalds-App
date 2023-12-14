@@ -1,7 +1,7 @@
 /** @module order */
 
-import * as menuData from './menuData.js';
-import * as helpers from './helpers.js';
+import * as menuData from './modules/menuData.js';
+import * as helpers from './modules/helpers.js';
 
 /** 
  * Class representing an order.
