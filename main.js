@@ -1,4 +1,4 @@
-import Order from '/modules/order.js';
+import Order from './modules/order.js';
 import MenuItemCard from './modules/menuItemCard.js';
 
 // Testing
